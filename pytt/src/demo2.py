@@ -1,4 +1,5 @@
 import torch
+import numpy as np
 
 x = torch.randn(3, 1, 5, 4)
 # print(x)
@@ -9,7 +10,7 @@ res = conv(x)
 # print(res.shape)  # torch.Size([3, 4, 4, 2])
 
 
-import numpy as np
+
 
 data = np.arange(12).reshape(2, 6)  # 生成数据并重组成2行六列
 print(data)
@@ -22,8 +23,7 @@ print(cols)  # 2
 cols1 = data.shape[1]  # 1表示列数
 print(cols1)  # 6
 
-
-shape = (2,3,)
+shape = (2, 3,)
 rand_tensor = torch.rand(shape)
 ones_tensor = torch.ones(shape)
 zeros_tensor = torch.zeros(shape)

@@ -5,12 +5,18 @@ import operator
 机器学习实战1  
 监督学习
 KNN分类算法
-
 '''
+
+
 def createDataSet():
     group = array([[1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]])
     labels = {'A', 'A', 'B', 'B'}
     return group, labels
+
+
+'''
+分类: 计算点于点之间的距离
+'''
 
 
 def classify0(inX, dataSet, labels, k):
@@ -26,6 +32,11 @@ def classify0(inX, dataSet, labels, k):
         classCount[voteILabel] = classCount.get(voteILabel, 0) + 1
     sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)
     return sortedClassCount
+
+
+'''
+读取文件并把数字填入矩阵
+'''
 
 
 def file2matrix(filename):
@@ -46,5 +57,5 @@ def file2matrix(filename):
 
 if __name__ == "__main__":
     group, labels = createDataSet()
-    ret =  classify0([0, 0], group, labels, 3)
+    ret = classify0([0, 0], group, labels, 3)
     print(ret)

@@ -1,8 +1,10 @@
 import torch
 import torch.nn as nn
 
-
 # 首先初始化一个全连接神经网络
+'''
+全连接神经网络:就是所有网络节点 都连接起来。
+'''
 full_connected = nn.Linear(12, 15)
 
 # 输入

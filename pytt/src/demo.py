@@ -8,15 +8,13 @@ x_data = torch.tensor(data)
 np_array = np.array(data)
 x_np = torch.from_numpy(np_array)
 
-
-x_ones = torch.ones_like(x_data)   # 保留 x_data 的属性
+x_ones = torch.ones_like(x_data)  # 保留 x_data 的属性
 print(f"Ones Tensor: \n {x_ones} \n")
 
-x_rand = torch.rand_like(x_data, dtype=torch.float)   # 重写 x_data 的数据类型：int -> float
+x_rand = torch.rand_like(x_data, dtype=torch.float)  # 重写 x_data 的数据类型：int -> float
 print(f"Random Tensor: \n {x_rand} \n")
 
-
-shape = (2,3,)
+shape = (2, 3,)
 rand_tensor = torch.rand(shape)
 ones_tensor = torch.ones(shape)
 zeros_tensor = torch.zeros(shape)

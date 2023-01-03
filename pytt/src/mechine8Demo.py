@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 y=wx 
 """
 
+
 def loadDataSet(fileName):
     numFeat = len(open(fileName).readline().split('\t')) - 1
     dataMat = []
@@ -60,19 +61,20 @@ def standRegres(xArr, yArr):
     ws = xTx.I * (xMat.T * yMat)  # 求出w，.I是对矩阵求逆矩阵
     return ws
 
+
 def plotRegression():
-    xArr, yArr = loadDataSet('D:\\learning\\ex0.txt')                                    # 加载数据集
-    ws = standRegres(xArr, yArr)                                        # 计算回归系数
-    xMat = mat(xArr)                                                    # 创建xMat矩阵
-    yMat = mat(yArr)                                                    # 创建yMat矩阵
-    xCopy = xMat.copy()                                                    # 深拷贝xMat矩阵
-    xCopy.sort(0)                                                        # 排序
-    yHat = xCopy * ws                                                     # 计算对应的y值
+    xArr, yArr = loadDataSet('D:\\learning\\ex0.txt')  # 加载数据集
+    ws = standRegres(xArr, yArr)  # 计算回归系数
+    xMat = mat(xArr)  # 创建xMat矩阵
+    yMat = mat(yArr)  # 创建yMat矩阵
+    xCopy = xMat.copy()  # 深拷贝xMat矩阵
+    xCopy.sort(0)  # 排序
+    yHat = xCopy * ws  # 计算对应的y值
     fig = plt.figure()
-    ax = fig.add_subplot(111)                                            # 添加subplot
-    ax.plot(xCopy[:, 1], yHat, c = 'red')                                # 绘制回归曲线
-    ax.scatter(xMat[:,1].flatten().A[0], yMat.flatten().A[0], s = 20, c = 'blue',alpha = .5)                # 绘制样本点
-    plt.title('DataSet')                                                # 绘制title
+    ax = fig.add_subplot(111)  # 添加subplot
+    ax.plot(xCopy[:, 1], yHat, c='red')  # 绘制回归曲线
+    ax.scatter(xMat[:, 1].flatten().A[0], yMat.flatten().A[0], s=20, c='blue', alpha=.5)  # 绘制样本点
+    plt.title('DataSet')  # 绘制title
     plt.xlabel('X')
     plt.show()
 
